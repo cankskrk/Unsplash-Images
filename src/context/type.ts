@@ -3,5 +3,6 @@ export type ProviderType = {
 };
 
 export type AppContextType = {
-  greeting: string;
+  isDarkTheme: boolean;
+  toggleDarkTheme: () => void;
 };
