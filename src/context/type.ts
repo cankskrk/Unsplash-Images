@@ -5,4 +5,6 @@ export type ProviderType = {
 export type AppContextType = {
   isDarkTheme: boolean;
   toggleDarkTheme: () => void;
+  searchValue: string;
+  handleSearchValue: (value: string) => void;
 };

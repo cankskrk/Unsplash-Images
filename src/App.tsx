@@ -5,7 +5,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import { useGlobalContext } from "./context/context";
 
 function App() {
-  const { isDarkTheme } = useGlobalContext();
+  const { isDarkTheme, searchValue } = useGlobalContext();
   return (
     <div
       className={`h-screen min-h-screen transition-colors duration-500 ease-in-out ${
@@ -14,7 +14,8 @@ function App() {
     >
       <ThemeToggle />
       <SearchForm />
-      <Gallery />
+
+      {searchValue && <Gallery />}
     </div>
   );
 }

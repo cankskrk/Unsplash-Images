@@ -1,15 +1,17 @@
+import { useGlobalContext } from "../context/context";
+
 const SearchForm = () => {
+  const { searchValue, handleSearchValue } = useGlobalContext();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const searchInput = form.elements.namedItem("search") as HTMLInputElement;
 
-    const searchValue = searchInput?.value;
+    const searchInputValue = searchInput?.value;
 
-    if (!searchValue) return;
-
-    console.log(searchValue);
-
+    if (!searchInputValue) return;
+    handleSearchValue(searchInputValue);
     searchInput.value = "";
   };
 
@@ -20,6 +22,8 @@ const SearchForm = () => {
         <input type="text" name="search" placeholder="cat" />
         <button>search</button>
       </form>
+
+      <p>{searchValue}</p>
     </section>
   );
 };
