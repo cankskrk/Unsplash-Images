@@ -13,7 +13,7 @@ const Gallery = () => {
   console.log(url);
 
   const response = useQuery({
-    queryKey: ["images"],
+    queryKey: ["images", searchValue],
     queryFn: async () => {
       const result = await axios.get(url);
 
