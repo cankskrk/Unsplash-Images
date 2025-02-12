@@ -9,6 +9,7 @@ export const AppProvider = ({ children }: ProviderType) => {
 
   const toggleDarkTheme = () => {
     setIsDarkTheme(!isDarkTheme);
+    localStorage.setItem("darkTheme", JSON.stringify(!isDarkTheme));
   };
 
   const handleSearchValue = (value: string) => {

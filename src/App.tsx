@@ -5,11 +5,14 @@ import ThemeToggle from "./components/ThemeToggle";
 import { useGlobalContext } from "./context/context";
 
 function App() {
-  const { isDarkTheme, searchValue } = useGlobalContext();
+  const { searchValue } = useGlobalContext();
+
+  const darkTheme = JSON.parse(localStorage.getItem("darkTheme") || "false");
+  console.log(darkTheme);
   return (
     <div
       className={`h-screen min-h-screen transition-colors duration-500 ease-in-out ${
-        isDarkTheme ? "bg-stone-950" : "bg-stone-50"
+        darkTheme ? "bg-stone-950" : "bg-stone-50"
       }`}
     >
       <ThemeToggle />

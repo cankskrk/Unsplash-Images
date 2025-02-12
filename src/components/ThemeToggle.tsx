@@ -7,15 +7,15 @@ const ThemeToggle = () => {
       <button
         className={
           isDarkTheme
-            ? "p-2 rounded-md text-white hover:text-sky-200"
-            : "p-2 rounded-md text-black hover:text-yellow-400"
+            ? "p-2 rounded-md text-yellow-200 hover:text-yellow-300"
+            : "p-2 rounded-md text-sky-200 hover:text-sky-300"
         }
         onClick={toggleDarkTheme}
       >
         {isDarkTheme ? (
-          <i className="fa-solid fa-moon text-3xl"></i>
-        ) : (
           <i className="fa-solid fa-sun text-3xl"></i>
+        ) : (
+          <i className="fa-solid fa-moon text-3xl"></i>
         )}
       </button>
     </section>
