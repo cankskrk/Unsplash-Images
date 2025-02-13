@@ -10,8 +10,6 @@ const Gallery = () => {
     import.meta.env.VITE_API_CLIENT_ID
   }&query=${encodeURIComponent(searchValue)}`;
 
-  console.log(url);
-
   const response = useQuery({
     queryKey: ["images", searchValue],
     queryFn: async () => {
@@ -48,10 +46,17 @@ const Gallery = () => {
   }
 
   return (
-    <section>
+    <section className="grid grid-cols-3 gap-3 p-16">
       {results.map((item: UnsplashImage) => {
         const url = item?.urls?.regular;
-        return <img src={url} key={item.id} alt={item.alt_description} />;
+        return (
+          <img
+            className="w-full h-full object-cover"
+            src={url}
+            key={item.id}
+            alt={item.alt_description}
+          />
+        );
       })}
     </section>
   );
