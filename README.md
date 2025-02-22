@@ -22,10 +22,6 @@ The main goal of this project is to **fetch images from the Unsplash API** dynam
 3. Retrieved images are displayed in a responsive grid format.
 4. Users can toggle between **light and dark modes**.
 
-## 🔗 Live Demo
-
-You can review the app **[here](https://unsplash-ack.netlify.app/)**.
-
 ## 🖼️ Screenshots
 
 ### 🔍 Search Results - Dark Mode
